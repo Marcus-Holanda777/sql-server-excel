@@ -8,15 +8,12 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Conexao conn = new Conexao("cosmos", "cosmos_v14b");
+            Conexao conn = new Conexao("seu_servidor", "seu_banco");
 
-            string query = "select prme_cd_produto as CODIGO, " +
-                           "prme_nr_dv as DIV, " +
-                           "RTRIM(prme_tx_descricao1) as DESCR " +
-                           "from produto_mestre";
+            string query = "seu_select";
 
-            DataTable tbl = conn.Tabela("produto", query);
-            CriaExcel(@"c:\arquivo\produtos.xlsx", tbl);
+            DataTable tbl = conn.Tabela("exemplo", query);
+            CriaExcel(@"caminho_do_excel", tbl);
             
         }
 
@@ -24,7 +21,7 @@ namespace ConsoleApp
         {
             using (XLWorkbook pasta = new XLWorkbook())
             {
-                IXLWorksheet planilha = pasta.Worksheets.Add("Resumo");
+                IXLWorksheet planilha = pasta.Worksheets.Add("nome_planilha");
 
                 int col = 1;
                 foreach(DataColumn c in dados.Columns)

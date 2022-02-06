@@ -60,7 +60,6 @@ namespace ConsoleApp
 
                 planilha.SheetView.ZoomScale = 80;
                 planilha.Columns().AdjustToContents(); /* ajusta as colunas de forma automatica */
-                planilha.Rows().AdjustToContents(); /* ajustar linhas */
                 pasta.SaveAs(nome);
             }
         }

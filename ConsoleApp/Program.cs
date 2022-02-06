@@ -55,7 +55,7 @@ namespace ConsoleApp
                 cabeca.Style
                     .Font.SetBold()
                     .Font.SetFontColor(XLColor.White)
-                    .Fill.SetBackgroundColor(XLColor.BleuDeFrance)
+                    .Fill.SetBackgroundColor(XLColor.BlueViolet)
                     .Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
 
                 planilha.SheetView.ZoomScale = 80;

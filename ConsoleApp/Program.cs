@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.IO;
 
 namespace ConsoleApp
 {
@@ -7,12 +8,12 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Conexao conn = new Conexao("cosmos", "cosmos_v14b");
+            Conexao conn = new Conexao("servidor", "banco");
 
-            string query = "select top 100 * from kardex_filial";
-            string caminho = @"c:\arquivo\Kardex.xlsx";
-            string nomeTabela = "Kardex";
-            string nomePlan = "Resumo";
+            string query = "seu_select";
+            string caminho = @"saida_arquivo";
+            string nomeTabela = "Nome_da_tabela";
+            string nomePlan = "Nome_da_plan";
 
             DataTable tbl = conn.Tabela(nomeTabela, query);
             ExcelExportar excel = new ExcelExportar(caminho, tbl);
